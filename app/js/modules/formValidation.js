@@ -83,3 +83,12 @@ export function formValidation(formBlock) {
 	submitBtn.addEventListener('click', formSubmit);
 }
 
+export function resetForm() {
+	const form = document.getElementById('form');
+	form.reset()
+
+	const fields = form.querySelectorAll('.form-item__field');
+
+	fields.forEach(field => field.classList.remove('field--filled', 'field--edit'));
+}
+

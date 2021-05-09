@@ -1,3 +1,5 @@
+import {resetForm} from './formValidation';
+
 const modalObject = {
 	overlay: document.querySelector('.overlay'),
 	modalBlock: document.querySelector('.modal'),
@@ -19,6 +21,8 @@ const modalObject = {
 			this.modalBlock.classList.remove('show');
 			document.body.classList.remove('noscroll');
 		}
+
+		resetForm();
 	},
 };
 
