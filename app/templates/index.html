@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RGB - Form</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#4758fc">
+    <meta name="msapplication-TileColor" content="#252525">
+    <meta name="theme-color" content="#252525">
+    <link rel="preload" type="text/css" href="css/style.min.css" as="style">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="visually-hidden"></nav>
+    </header>
+    <main>
+      <h1 class="visually-hidden">Анкета</h1>
+      <form class="form" id="form" method="POST">
+        <h2 class="form-title">Анкета Front-end разработчика</h2>
+        <h3 class="form-desc">Введите свои данные</h3>
+        <fieldset>
+          <legend class="visually-hidden">Анкета</legend>
+          <p class="form-item">
+            <input class="form-item__field field-name validate" id="name" type="text" name="user-name" minlength="2" maxlength="10" required>
+            <label class="form-item__label" for="name">Имя</label><span class="form-item__message">Пожалуйста, введите Ваше имя (количество символов от 2 до 10)</span>
+          </p>
+          <p class="form-item">
+            <input class="form-item__field field-surname validate" id="surname" type="text" name="user-surname" minlength="2" maxlength="10" required>
+            <label class="form-item__label" for="surname">Фамилия</label><span class="form-item__message">Пожалуйста, введите Вашу фамилию (количество символов от 2 до 20)</span>
+          </p>
+          <p class="form-item">
+            <input class="form-item__field field-email validate" id="email" type="email" name="user-email" required value>
+            <label class="form-item__label" for="email">E-mail</label><span class="form-item__message">Пожалуйста, введите Ваш e-mail</span>
+          </p>
+          <p class="form-item">
+            <input class="form-item__field field-phone validate" id="phone" type="tel" name="user-phone" required>
+            <label class="form-item__label visually-hidden" for="phone">Телефон</label><span class="field-phone--error visually-hidden"></span><span class="field-phone--valid visually-hidden">✓ Номер корректный</span>
+          </p>
+          <p class="form-item">
+            <input class="form-item__field field-city validate" id="city" type="text" name="user-city" required>
+            <label class="form-item__label" for="city">Город</label><span class="form-item__message">Пожалуйста, введите название города в котором Вы проживаете</span>
+          </p>
+          <p class="form-item">
+            <select class="form-item__field field-skills validate" id="skills" name="skills" multiple required>
+              <option value="html/css">HTML/CSS</option>
+              <option value="javascript">JavaScript</option>
+              <option value="jquery">jQuery</option>
+              <option value="bootstrap">Bootstrap</option>
+              <option value="sass">Sass</option>
+              <option value="less">Less</option>
+              <option value="reactjs">ReactJS</option>
+              <option value="vuejs">VueJS</option>
+            </select>
+            <label class="form-item__label label-skills" for="skills">Навыки</label><span class="form-item__message">Пожалуйста, выберите из списка навыки, которыми владеете</span>
+          </p>
+          <p class="form-item">
+            <textarea class="form-item__field field-about validate" id="about" data-autoresize rows="3" name="user-about" minlength="10" maxlength="300" required></textarea>
+            <label class="form-item__label label-about" for="about">Немного о себе</label><span class="form-item__message">Пожалуйста, расскажите коротко о себе (количество символов от 10 до 300)</span>
+          </p>
+        </fieldset>
+        <button class="form-btn" type="submit">Отправить</button>
+      </form>
+    </main>
+    <footer class="footer">
+      <div class="loader visually-hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block; shape-rendering: auto;" width="200px" height="200px" viewbox="0 0 100 100" preserveaspectratio="xMidYMid">
+          <circle cx="50" cy="50" r="0" fill="none" stroke="#a8b530" stroke-width="2">
+            <animate attributename="r" repeatcount="indefinite" dur="1s" values="0;40" keytimes="0;1" keysplines="0 0.2 0.8 1" calcmode="spline" begin="-0.5s"></animate>
+            <animate attributename="opacity" repeatcount="indefinite" dur="1s" values="1;0" keytimes="0;1" keysplines="0.2 0 0.8 1" calcmode="spline" begin="-0.5s"></animate>
+          </circle>
+          <circle cx="50" cy="50" r="0" fill="none" stroke="#a8b530" stroke-width="2">
+            <animate attributename="r" repeatcount="indefinite" dur="1s" values="0;40" keytimes="0;1" keysplines="0 0.2 0.8 1" calcmode="spline"></animate>
+            <animate attributename="opacity" repeatcount="indefinite" dur="1s" values="1;0" keytimes="0;1" keysplines="0.2 0 0.8 1" calcmode="spline"></animate>
+          </circle>
+        </svg>
+      </div>
+      <div class="overlay">
+        <div class="modal form">
+          <h4 class="modal-title">Спасибо!</h4>
+          <p class="modal-desc">Ваша анкета отправлена</p>
+          <p class="modal-desc">Мы свяжемся с Вами<br>&nbsp; в течение 72 часов</p>
+          <button class="modal-btn">Ок</button>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.bundle.js"></script>
+  </body>
+</html>

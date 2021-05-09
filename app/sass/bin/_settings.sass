@@ -1,0 +1,128 @@
+@import __colors-variables
+//----------------------------------------------------
+
+$-modal-box-shadow: 0 14px 37px rgba(33, 33, 33, .7)
+$-font-family: 'Montserrat', sans-serif
+
+$--color--border: hsla(0, 0%, 11%, 1)
+$--color--error: hsla(359, 80%, 39%, 1)
+$--color--success: hsla(66, 58%, 45%, 1)
+
+//----------------------------------------------------
+
+\:root, [data-theme="default"]
+    @include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont)
+    --color-main: 234
+    @include defineColorHSL(--color-primary, $primary-hue, $primary-saturation, $primary-lightness)
+    @include defineColorHSL(--color-second, $second-hue, $second-saturation, $second-lightness)
+    @include defineColorHSL(--color-dark, $dark-hue, $dark-saturation, $dark-lightness)
+    @include defineColorHSL(--color-light, $light-hue, $light-saturation, $light-lightness)
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    &::before,
+    &::after
+        box-sizing: border-box
+    &::selection
+        background: hsla(var(--color-second-h), var(--color-second-s), var(--color-second-l), .8)
+
+html
+    position: relative
+    scrollbar-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1) transparent
+    scrollbar-width: thin
+
+body
+    font-family: $-font-family
+    color: hsla(0, 0%, 53%, 1)
+    background: hsla(360, 97%, 100%, 1)
+    line-height: 1.2
+    &::-webkit-scrollbar
+        width: 6px
+    &::-webkit-scrollbar-track
+        -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, .2) inset
+        background-color: transparent
+    &::-webkit-scrollbar-thumb
+        border-radius: 5px
+        background-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1)
+
+main
+    min-height: 100vh
+    @include flex
+    justify-content: center
+    padding: .8em .5em
+    @include temp-blue
+    border: 0
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden
+    position: absolute
+    width: 1px
+    height: 1px
+    margin: -1px
+    border: 0
+    padding: 0
+    white-space: nowrap
+    clip-path: inset(100%)
+    clip: rect(0 0 0 0)
+    overflow: hidden
+
+h1
+    font-size: $h1
+
+h2
+    font-size: $h2
+
+button
+    letter-spacing: 1px
+    font-family: 'Raleway', sans-serif
+    font-weight: 700
+    border: 0
+    cursor: pointer
+    transition: all 265ms ease-in
+    &:hover
+        background: hsla(var(--color-second-h), calc(var(--color-second-s) - 19%), calc(var(--color-second-l) - 32%), 1)
+    &:active
+        background: hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+
+button, a, input
+    &:focus
+        outline: 0
+        box-shadow: 0 1px 0 0 hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
+
+form
+    box-shadow: $-modal-box-shadow
+    & fieldset
+        display: flex
+        flex-direction: column
+        & legend
+            text-align: center
+        & p
+            margin-top: .5em
+        & button
+            margin-top: .5em
+            padding: .3em .8em
+
+input, textarea
+    width: 100%
+    padding: .5em .8em
+    font-family: 'Montserrat', sans-serif
+    font-size: calc(#{$base10} * 1.5)
+    font-weight: normal
+    background: transparent
+    border: 0
+    border-bottom: 2px solid hsla(0, 0%, 11%, 1)
+
+input::-webkit-input-placeholder , textarea::-webkit-input-placeholder
+    @include placeholdersFont
+input::-moz-placeholder, textarea::-moz-placeholder
+    @include placeholdersFont
+input:-moz-placeholder, textarea:-moz-placeholder
+    @include placeholdersFont
+input:-ms-input-placeholder, textarea:-ms-input-placeholder
+    @include placeholdersFont
+
+.noscroll
+    overflow: hidden
