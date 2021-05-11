@@ -32,7 +32,7 @@
             top: .5rem
             left: .25rem
             font-family: 'Montserrat', sans-serif
-            font-size: calc(#{$base10} * 1.2)
+            font-size: calc(#{$base10} * 1.5)
             font-weight: 300
             color: hsla(0, 0%, 26%, 1)
             transition: .3s
@@ -47,6 +47,7 @@
             &:focus~.form-item__label,
             &:not(:focus):valid~.form-item__label
                 top: -.5rem
+                font-size: calc(#{$base10} * 1.2)
         &__message
             position: absolute
             display: block
@@ -134,7 +135,6 @@
 .field
     &-phone
         font-size: calc(#{$base10} * 1.2)
-        //line-height: 1.4
         &--error,
         &--valid
             @extend .form-item__message
@@ -150,8 +150,8 @@
                 box-shadow: none
                 background-image: linear-gradient(transparent, transparent calc(4ch - 2px), $--color--error 0px)
         & + .form-item__label
+            font-size: calc(#{$base10} * 1.5)
             color: $--color--error
-            top: -.2rem
         & > .ss-multi-selected
             border-color: $--color--error
         & ~ .form-item__message

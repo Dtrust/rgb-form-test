@@ -1448,7 +1448,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
       top: .5rem;
       left: .25rem;
       font-family: 'Montserrat', sans-serif;
-      font-size: calc(0.347rem * 1.2);
+      font-size: calc(0.347rem * 1.5);
       font-weight: 300;
       color: #424242;
       transition: .3s; }
@@ -1461,7 +1461,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
       top: 5%; }
     .form-item__field:focus ~ .form-item__label,
     .form-item__field:not(:focus):valid ~ .form-item__label {
-      top: -.5rem; }
+      top: -.5rem;
+      font-size: calc(0.347rem * 1.2); }
     .form-item__message, .field-phone--error, .field-phone--valid {
       position: absolute;
       display: block;
@@ -1551,8 +1552,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     box-shadow: none;
     background-image: linear-gradient(transparent, transparent calc(4ch - 2px), #b31417 0px); }
   .field--error + .form-item__label {
-    color: #b31417;
-    top: -.2rem; }
+    font-size: calc(0.347rem * 1.5);
+    color: #b31417; }
   .field--error > .ss-multi-selected {
     border-color: #b31417; }
   .field--error ~ .form-item__message, .field--error ~ .field-phone--error, .field--error ~ .field-phone--valid {
