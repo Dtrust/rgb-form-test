@@ -96,8 +96,6 @@ main {
   align-items: center;
   justify-content: center;
   padding: .8em .5em;
-  background: rgba(0, 0, 255, 0.26);
-  border: 1px dashed blue;
   border: 0; }
 
 .visually-hidden:not(:focus):not(:active), .form .ss-disabled:not(:focus):not(:active), .modal .ss-disabled:not(:focus):not(:active),
@@ -139,19 +137,6 @@ button {
 button:focus, a:focus, input:focus {
   outline: 0;
   box-shadow: 0 1px 0 0 hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1); }
-
-form {
-  box-shadow: 0 14px 37px rgba(33, 33, 33, 0.7); }
-  form fieldset {
-    display: flex;
-    flex-direction: column; }
-    form fieldset legend {
-      text-align: center; }
-    form fieldset p {
-      margin-top: .5em; }
-    form fieldset button {
-      margin-top: .5em;
-      padding: .3em .8em; }
 
 input, textarea {
   width: 100%;
@@ -1465,10 +1450,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
       font-family: 'Montserrat', sans-serif;
       font-size: calc(0.347rem * 1.2);
       font-weight: 300;
+      color: #424242;
       transition: .3s; }
       .form-item__label.label-skills {
         top: .1rem; }
     .form-item__field.field-phone {
+      height: 1.2rem;
       padding-bottom: .4rem; }
     .form-item__field.field-about + .form-item__label {
       top: 5%; }
@@ -1491,6 +1478,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     border-radius: 30px; }
   .form .iti, .modal .iti {
     width: 100%; }
+    .form .iti__arrow, .modal .iti__arrow {
+      display: none; }
     .form .iti__selected-flag, .modal .iti__selected-flag {
       background-color: transparent; }
     .form .iti__selected-dial-code, .modal .iti__selected-dial-code {
@@ -1544,12 +1533,15 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         top: -.3rem; }
     .form .field-about:valid, .modal .field-about:valid {
       background-image: linear-gradient(transparent, transparent calc(4ch - 1px), #a8b530 0); }
+    .form .field-about ~ .form-item__message, .modal .field-about ~ .form-item__message, .form .field-about ~ .field-phone--error, .modal .field-about ~ .field-phone--error, .form .field-about ~ .field-phone--valid, .modal .field-about ~ .field-phone--valid {
+      bottom: 0; }
 
-.field-phone--error, .field-phone--valid {
-  display: block; }
-
-.field-phone--valid {
-  color: #a8b530; }
+.field-phone {
+  font-size: calc(0.347rem * 1.2); }
+  .field-phone--error, .field-phone--valid {
+    visibility: visible; }
+  .field-phone--valid {
+    color: #a8b530; }
 
 .field--error {
   border-color: #b31417; }
@@ -1662,6 +1654,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
       .form-item__field:focus ~ .form-item__label,
       .form-item__field:not(:focus):valid ~ .form-item__label {
         font-size: calc(0.347rem * 1.5); }
+      .form-item__field.field-phone {
+        font-size: calc(0.347rem * 2.2); }
     .form-btn, .modal-btn {
       width: 100%;
       font-size: calc(0.347rem * 2.5); }

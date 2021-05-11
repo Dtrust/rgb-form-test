@@ -15,8 +15,10 @@ export function phoneField(phoneFieldSelector) {
 		utilsScript: 'js/utils.js',
 	});
 
+	input.addEventListener('keyup', () => input.value = input.value.replace(/[^\d]/g, ''));
+
 	const reset = function() {
-		input.classList.remove('phone--error');
+		input.classList.remove('phone--error', 'field--error');
 		input.classList.add('field--filled');
 		errorMsg.innerHTML = '';
 		errorMsg.classList.add('visually-hidden');

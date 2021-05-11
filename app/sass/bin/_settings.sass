@@ -36,7 +36,7 @@ html
 body
     font-family: $-font-family
     color: hsla(0, 0%, 53%, 1)
-    background: hsla(360, 97%, 100%, 1)
+    background: hsla(0, 100%, 100%, 1)
     line-height: 1.2
     &::-webkit-scrollbar
         width: 6px
@@ -52,7 +52,6 @@ main
     @include flex
     justify-content: center
     padding: .8em .5em
-    @include temp-blue
     border: 0
 
 .visually-hidden:not(:focus):not(:active),
@@ -92,18 +91,18 @@ button, a, input
         outline: 0
         box-shadow: 0 1px 0 0 hsla(var(--color-dark-h), var(--color-dark-s), var(--color-dark-l), 1)
 
-form
-    box-shadow: $-modal-box-shadow
-    & fieldset
-        display: flex
-        flex-direction: column
-        & legend
-            text-align: center
-        & p
-            margin-top: .5em
-        & button
-            margin-top: .5em
-            padding: .3em .8em
+//form
+//    box-shadow: $-modal-box-shadow
+//    & fieldset
+//        display: flex
+//        flex-direction: column
+//        & legend
+//            text-align: center
+//        & p
+//            margin-top: .5em
+//        & button
+//            margin-top: .5em
+//            padding: .3em .8em
 
 input, textarea
     width: 100%

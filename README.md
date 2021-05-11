@@ -1,6 +1,6 @@
 # Тестовое задание RGB
 
-Анкета с динамической валидацийе полей. Страница проекта [rgb-form]( https://dtrust.github.io/rgb-form-test/) 
+Анкета с динамической валидацийе полей. Страница проекта на GitHubPages [rgb-form]( https://dtrust.github.io/rgb-form-test/)
   
 От правка формы реализована с помощью [getform.io](https://getform.io/)
 
